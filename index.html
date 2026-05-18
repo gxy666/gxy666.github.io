@@ -80,6 +80,8 @@
     border-bottom: 2px solid var(--accent);
     display: inline-block;
   }
+  .card ul { padding-left: 20px; color: var(--muted); }
+  .card li { margin-bottom: 6px; }
 
   .pub { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
   .pub:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
@@ -87,14 +89,14 @@
   .pub .pub-authors { color: var(--muted); font-size: .92rem; margin: 3px 0; }
   .pub .pub-venue { font-size: .88rem; color: var(--muted); }
   .pub .pub-venue em { font-style: italic; color: var(--accent); }
-  .pub .pub-links { margin-top: 4px; }
-  .pub .pub-links a {
-    font-size: .85rem; color: var(--accent); text-decoration: none; margin-right: 12px;
-  }
+
+  .patent { margin-bottom: 10px; color: var(--muted); font-size: .93rem; }
+  .patent:last-child { margin-bottom: 0; }
+  .patent strong { color: var(--text); }
 
   .timeline-item { display: flex; gap: 16px; margin-bottom: 14px; }
   .timeline-item:last-child { margin-bottom: 0; }
-  .timeline-year { min-width: 90px; color: var(--accent); font-weight: 600; font-size: .92rem; }
+  .timeline-year { min-width: 100px; color: var(--accent); font-weight: 600; font-size: .92rem; }
   .timeline-detail { flex: 1; }
   .timeline-detail strong { display: block; }
   .timeline-detail span { color: var(--muted); font-size: .9rem; }
@@ -112,15 +114,19 @@
 <body>
 <div class="container">
 
+  <!-- ========== Profile ========== -->
   <div class="profile">
     <img class="profile-photo" src="photo.jpg" alt="Xiangyu Gao">
     <div class="profile-text">
     <h1>Xiangyu Gao</h1>
-    <div class="affil">M.S. Candidate · Institute for Network Sciences and Cyberspace, Tsinghua University</div>
+    <div class="affil">Ph.D. Candidate · Institute for Network Sciences and Cyberspace, Tsinghua University</div>
     <p class="bio">
+      I am a Ph.D. candidate at Tsinghua University, advised by Prof. Ke Xu.
       My research focuses on <strong>programmable network traffic analysis</strong> and
       <strong>network security</strong>, including in-network DNN inference,
       congestion control for datacenter networks, and FPGA-enhanced programmable switches.
+      I have completed my Ph.D. proposal defense.
+      I also serve as the class assistant for senior Ph.D. students at the institute.
       Published at <strong>NSDI</strong>, <strong>SIGCOMM</strong>, <strong>IEEE ToN</strong>, and other top venues.
       Expected graduation: June 2027.
     </p>
@@ -132,9 +138,10 @@
     </div><!-- .profile-text -->
   </div>
 
+  <!-- ========== Research Interests ========== -->
   <div class="card">
     <h2>Research Interests</h2>
-    <ul style="padding-left:20px; color:var(--muted);">
+    <ul>
       <li>Programmable network dataplane (P4, FPGA, SmartNIC)</li>
       <li>In-network deep learning inference</li>
       <li>Datacenter congestion control (ECN, RED)</li>
@@ -142,6 +149,26 @@
     </ul>
   </div>
 
+  <!-- ========== Education ========== -->
+  <div class="card">
+    <h2>Education</h2>
+    <div class="timeline-item">
+      <div class="timeline-year">2021 – Present</div>
+      <div class="timeline-detail">
+        <strong>Ph.D., Cyberspace Security</strong>
+        <span>Institute for Network Sciences and Cyberspace, Tsinghua University · Advisor: Prof. Ke Xu</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2017 – 2021</div>
+      <div class="timeline-detail">
+        <strong>B.E., Computer Science &amp; Technology</strong>
+        <span>Taishan College, Shandong University</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Publications ========== -->
   <div class="card">
     <h2>Selected Publications</h2>
 
@@ -188,29 +215,66 @@
     </div>
   </div>
 
+  <!-- ========== Patents ========== -->
   <div class="card">
-    <h2>Education</h2>
+    <h2>Patents</h2>
+    <div class="patent"><strong>一种智能数据平面推理方法和装置</strong> &mdash; 徐恪, <strong>高翔宇</strong>, 赵乙, 朱敏</div>
+    <div class="patent"><strong>基于部分可观测多智能体强化学习的计算卸载方法及装置</strong> &mdash; 姚苏, 徐恪, 罗松, <strong>高翔宇</strong></div>
+    <div class="patent"><strong>一种面向可编程交换机的快速推理部署方法及装置</strong> &mdash; 徐恪, 张寅超, 赵乙, <strong>高翔宇</strong>, 朱敏, 姚苏</div>
+    <div class="patent"><strong>一种多源异构数据对齐方法及装置</strong> &mdash; 姚苏, 徐恪, 关建峰, 罗松, <strong>高翔宇</strong></div>
+  </div>
+
+  <!-- ========== Teaching ========== -->
+  <div class="card">
+    <h2>Teaching</h2>
     <div class="timeline-item">
-      <div class="timeline-year">2021 – Present</div>
+      <div class="timeline-year">2025 Fall</div>
       <div class="timeline-detail">
-        <strong>M.S., Cyberspace Security</strong>
-        <span>Institute for Network Sciences and Cyberspace, Tsinghua University</span>
+        <strong>Teaching Assistant, Advanced Computer Networks</strong>
+        <span>Tsinghua University</span>
       </div>
     </div>
     <div class="timeline-item">
-      <div class="timeline-year">2017 – 2021</div>
+      <div class="timeline-year">2024 Fall</div>
       <div class="timeline-detail">
-        <strong>B.E., Computer Science &amp; Technology</strong>
-        <span>Taishan College, Shandong University</span>
+        <strong>Teaching Assistant, Advanced Computer Networks</strong>
+        <span>Tsinghua University</span>
       </div>
     </div>
   </div>
 
+  <!-- ========== Professional Service ========== -->
+  <div class="card">
+    <h2>Professional Service</h2>
+    <div class="timeline-item">
+      <div class="timeline-year">Reviewer</div>
+      <div class="timeline-detail">
+        <strong>IEEE Transactions on Networking (ToN)</strong>
+        <span>2026</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== Awards ========== -->
+  <div class="card">
+    <h2>Honors &amp; Awards</h2>
+    <ul>
+      <li><strong>First Prize</strong>, 2025 Future Network Technology Innovation Competition (未来网络科技创新大赛)</li>
+      <li><strong>First-Class Academic Scholarship</strong>, Tsinghua University, 2025</li>
+      <li><strong>Second-Class Social Work Scholarship</strong>, Tsinghua University, 2023, 2024, 2025</li>
+      <li><strong>Outstanding Graduate of Shandong University</strong>, Class of 2021</li>
+      <li><strong>Taishan College Honors Certificate</strong>, National Basic Science Elite Student Training Program, Shandong University</li>
+      <li><strong>Third-Class Academic Scholarship</strong>, Shandong University, 2018, 2020</li>
+      <li><strong>Second-Class Special Talent Scholarship (Social Service)</strong>, Shandong University, 2018, 2019, 2020</li>
+    </ul>
+  </div>
+
+  <!-- ========== Contact ========== -->
   <div class="card">
     <h2>Contact</h2>
     <p style="color:var(--muted);">
       📧 gao-xy24@mails.tsinghua.edu.cn<br>
-      🏢 Tsinghua University, Beijing, China
+      🏢 Institute for Network Sciences and Cyberspace, Tsinghua University, Beijing, China
     </p>
   </div>
 
