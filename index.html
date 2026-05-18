@@ -89,6 +89,18 @@
   .pub .pub-authors { color: var(--muted); font-size: .92rem; margin: 3px 0; }
   .pub .pub-venue { font-size: .88rem; color: var(--muted); }
   .pub .pub-venue em { font-style: italic; color: var(--accent); }
+  .pub .pub-links { margin-top: 6px; }
+  .pub .pub-links a {
+    display: inline-block;
+    font-size: .85rem; font-weight: 500; color: var(--accent);
+    text-decoration: none; padding: 3px 12px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: background .15s, color .15s;
+  }
+  .pub .pub-links a:hover {
+    background: var(--accent); color: #fff;
+  }
 
   .patent { margin-bottom: 10px; color: var(--muted); font-size: .93rem; }
   .patent:last-child { margin-bottom: 0; }
