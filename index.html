@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>个人主页</title>
+<title>Xiangyu Gao — Tsinghua University</title>
 <style>
   :root {
     --bg: #fafafa;
     --card: #fff;
     --text: #222;
     --muted: #666;
-    --accent: #1a56db;
-    --accent-light: #e8f0fe;
+    --accent: #7c3aed;
+    --accent-light: #f3e8ff;
     --border: #e5e5e5;
     --radius: 10px;
     --shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #111;
+      --bg: #0d0d0d;
       --card: #1a1a1a;
       --text: #eee;
       --muted: #999;
-      --accent: #6ea8fe;
-      --accent-light: #1a2a3f;
-      --border: #333;
+      --accent: #a78bfa;
+      --accent-light: #1e1730;
+      --border: #2a2a2a;
     }
   }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -35,9 +35,8 @@
     line-height: 1.7;
     min-height: 100vh;
   }
-  .container { max-width: 820px; margin: 0 auto; padding: 48px 24px 64px; }
+  .container { max-width: 840px; margin: 0 auto; padding: 48px 24px 64px; }
 
-  /* 顶部个人卡片 */
   .profile {
     background: var(--card);
     border: 1px solid var(--border);
@@ -47,8 +46,8 @@
     box-shadow: var(--shadow);
   }
   .profile h1 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
-  .profile .title { color: var(--accent); font-size: 1.05rem; font-weight: 500; margin-bottom: 16px; }
-  .profile p { color: var(--muted); max-width: 620px; }
+  .profile .affil { color: var(--accent); font-size: 1.05rem; font-weight: 500; margin-bottom: 12px; }
+  .profile .bio { color: var(--muted); max-width: 640px; line-height: 1.8; }
   .profile .links { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; }
   .profile .links a {
     display: inline-flex; align-items: center; gap: 5px;
@@ -58,9 +57,8 @@
     background: var(--accent-light);
     transition: filter .15s;
   }
-  .profile .links a:hover { filter: brightness(.92); }
+  .profile .links a:hover { filter: brightness(.9); }
 
-  /* 通用卡片 */
   .card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -70,37 +68,31 @@
     box-shadow: var(--shadow);
   }
   .card h2 {
-    font-size: 1.2rem; font-weight: 600;
-    margin-bottom: 16px; padding-bottom: 10px;
+    font-size: 1.15rem; font-weight: 600;
+    margin-bottom: 18px; padding-bottom: 8px;
     border-bottom: 2px solid var(--accent);
     display: inline-block;
   }
 
-  /* 论文列表 */
-  .pub { margin-bottom: 20px; }
-  .pub:last-child { margin-bottom: 0; }
+  .pub { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+  .pub:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
   .pub .pub-title { font-weight: 600; font-size: 1.02rem; }
-  .pub .pub-authors { color: var(--muted); font-size: .92rem; margin: 2px 0; }
-  .pub .pub-venue { font-size: .88rem; color: var(--muted); font-style: italic; }
+  .pub .pub-authors { color: var(--muted); font-size: .92rem; margin: 3px 0; }
+  .pub .pub-venue { font-size: .88rem; color: var(--muted); }
+  .pub .pub-venue em { font-style: italic; color: var(--accent); }
   .pub .pub-links { margin-top: 4px; }
   .pub .pub-links a {
     font-size: .85rem; color: var(--accent); text-decoration: none; margin-right: 12px;
   }
 
-  /* 时间线 */
-  .timeline-item { display: flex; gap: 16px; margin-bottom: 16px; }
+  .timeline-item { display: flex; gap: 16px; margin-bottom: 14px; }
   .timeline-item:last-child { margin-bottom: 0; }
-  .timeline-year {
-    min-width: 80px; color: var(--accent); font-weight: 600; font-size: .92rem;
-  }
+  .timeline-year { min-width: 90px; color: var(--accent); font-weight: 600; font-size: .92rem; }
   .timeline-detail { flex: 1; }
   .timeline-detail strong { display: block; }
   .timeline-detail span { color: var(--muted); font-size: .9rem; }
 
-  footer {
-    text-align: center; color: var(--muted); font-size: .82rem;
-    margin-top: 32px;
-  }
+  footer { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 32px; }
 
   @media (max-width: 600px) {
     .profile { padding: 24px; }
@@ -112,106 +104,106 @@
 <body>
 <div class="container">
 
-  <!-- ========== 个人名片 ========== -->
   <div class="profile">
-    <h1>👋 你的姓名</h1>
-    <div class="title">博士研究生 / 助理教授 · 某某大学</div>
-    <p>
-      研究方向为<strong>机器学习</strong>与<strong>计算机视觉</strong>。
-      在 CVPR、ICCV、NeurIPS 等会议发表论文多篇。欢迎交流合作。
+    <h1>Xiangyu Gao</h1>
+    <div class="affil">M.S. Candidate · Tsinghua University</div>
+    <p class="bio">
+      My research focuses on <strong>programmable network traffic analysis</strong>,
+      including in-network DNN inference, congestion control for datacenter networks,
+      and FPGA-enhanced programmable switches.
+      Published at <strong>NSDI</strong>, <strong>SIGCOMM</strong>, <strong>IEEE ToN</strong>, and other top venues.
     </p>
     <div class="links">
-      <a href="mailto:yourname@example.com">📧 Email</a>
-      <a href="https://scholar.google.com/citations?user=YOUR_ID">📚 Google Scholar</a>
+      <a href="mailto:gxy666@mails.tsinghua.edu.cn">📧 Email</a>
+      <a href="https://scholar.google.com/citations?hl=zh-CN&user=JfitiXYAAAAJ">📚 Google Scholar</a>
       <a href="https://github.com/gxy666">💻 GitHub</a>
-      <a href="#">📄 CV / 简历</a>
     </div>
   </div>
 
-  <!-- ========== 研究兴趣 ========== -->
   <div class="card">
-    <h2>🔬 研究兴趣</h2>
+    <h2>Research Interests</h2>
     <ul style="padding-left:20px; color:var(--muted);">
-      <li>深度学习理论与可解释性</li>
-      <li>多模态大模型训练与对齐</li>
-      <li>自动驾驶感知系统</li>
-      <li>医学图像分析</li>
+      <li>Programmable network dataplane (P4, FPGA, SmartNIC)</li>
+      <li>In-network deep learning inference</li>
+      <li>Datacenter congestion control (ECN, RED)</li>
+      <li>Network verification &amp; accountability</li>
     </ul>
   </div>
 
-  <!-- ========== 代表性论文 ========== -->
   <div class="card">
-    <h2>📄 代表性论文</h2>
+    <h2>Selected Publications</h2>
 
     <div class="pub">
-      <div class="pub-title">Paper Title Goes Here: A Novel Approach to Something</div>
-      <div class="pub-authors"><strong>Your Name</strong>, Co-Author One, Co-Author Two</div>
-      <div class="pub-venue">CVPR 2024</div>
-      <div class="pub-links">
-        <a href="#">📄 PDF</a>
-        <a href="#">💻 Code</a>
-        <a href="#">🔗 DOI</a>
-      </div>
+      <div class="pub-title">FENIX: Enabling In-Network DNN Inference with FPGA-Enhanced Programmable Switches</div>
+      <div class="pub-authors"><strong>Xiangyu Gao</strong>, Tao Li, Yikai Zhang, Zirui Wang, Xin Zeng, Shutao Yao, Ke Xu</div>
+      <div class="pub-venue"><em>NSDI 2026</em> — 23rd USENIX Symposium on Networked Systems Design and Implementation</div>
     </div>
 
     <div class="pub">
-      <div class="pub-title">Another Important Paper About Deep Learning</div>
-      <div class="pub-authors">Co-Author One, <strong>Your Name</strong>, Co-Author Three</div>
-      <div class="pub-venue">NeurIPS 2023</div>
-      <div class="pub-links">
-        <a href="#">📄 PDF</a>
-        <a href="#">💻 Code</a>
-      </div>
+      <div class="pub-title">PRED: Performance-oriented Random Early Detection for Consistently Stable Performance in Datacenters</div>
+      <div class="pub-authors">Xiaochen Du, Tao Li, Guoming Zhou, Zihao Liu, Haoyu Huang, <strong>Xiangyu Gao</strong>, Mingfa Wang, Kun Tan, Ke Xu</div>
+      <div class="pub-venue"><em>NSDI 2025</em> — 22nd USENIX Symposium on Networked Systems Design and Implementation</div>
     </div>
 
     <div class="pub">
-      <div class="pub-title">Yet Another Research Work Worth Reading</div>
-      <div class="pub-authors"><strong>Your Name</strong>, Co-Author Two</div>
-      <div class="pub-venue">ICCV 2023</div>
-      <div class="pub-links">
-        <a href="#">📄 PDF</a>
-        <a href="#">🔗 DOI</a>
+      <div class="pub-title">Pegasus: A Universal Framework for Scalable Deep Learning Inference on the Dataplane</div>
+      <div class="pub-authors">Yikai Zhang, Shutao Yao, Yuxuan Feng, Kai Chen, Tao Li, Zihao Liu, Yiran Zhao, Lizhi Zhang, <strong>Xiangyu Gao</strong>, Ke Xu</div>
+      <div class="pub-venue"><em>SIGCOMM 2025</em> — Proceedings of the ACM SIGCOMM 2025 Conference, 692-706</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">DiffECN: Differential ECN Marking for Datacenter Networks</div>
+      <div class="pub-authors">Haoyu Huang, Ke Xu, Tao Li, Zihao Liu, Xiaochen Du, <strong>Xiangyu Gao</strong></div>
+      <div class="pub-venue"><em>IEEE Transactions on Networking</em>, Vol. 33, No. 1, pp. 210-225, 2024</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Revisiting Random Early Detection Tuning for High-Performance Datacenter Networks</div>
+      <div class="pub-authors">Tao Li, Xiaochen Du, <strong>Xiangyu Gao</strong>, Guoming Zhou, Haoyu Huang, Zihao Liu, Mingfa Wang, Kun Tan, Ke Xu</div>
+      <div class="pub-venue"><em>IEEE Transactions on Networking</em></div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">PIPE: Identity-Aware Privacy-Enhanced Source and Path Verification for Strengthened Network Accountability</div>
+      <div class="pub-authors">Jun Guan, Kai Liu, Shutao Yao, Xindi Hu, Yuchen Qin, Jianan Liu, Sirui Fu, <strong>Xiangyu Gao</strong>, Ke Xu</div>
+      <div class="pub-venue"><em>IEEE ICNP 2025</em> — 33rd International Conference on Network Protocols</div>
+    </div>
+
+    <div class="pub">
+      <div class="pub-title">Performant TCP over Wi-Fi Direct</div>
+      <div class="pub-authors">Haoyu Huang, Ke Xu, Xiaochen Du, Yifei Shao, Jian Li, <strong>Xiangyu Gao</strong>, Tao Li</div>
+      <div class="pub-venue"><em>IEEE/ACM IWQoS 2024</em> — 32nd International Symposium on Quality of Service</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Education</h2>
+    <div class="timeline-item">
+      <div class="timeline-year">2023 – Present</div>
+      <div class="timeline-detail">
+        <strong>M.S., Computer Science &amp; Technology</strong>
+        <span>Tsinghua University</span>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2019 – 2023</div>
+      <div class="timeline-detail">
+        <strong>B.E., Information Engineering</strong>
+        <span><!-- 请填写本科学校 --></span>
       </div>
     </div>
   </div>
 
-  <!-- ========== 教育经历 ========== -->
   <div class="card">
-    <h2>🎓 教育经历</h2>
-    <div class="timeline-item">
-      <div class="timeline-year">2021 – 今</div>
-      <div class="timeline-detail">
-        <strong>博士，计算机科学与技术</strong>
-        <span>某某大学 · 导师：某某教授</span>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2018 – 2021</div>
-      <div class="timeline-detail">
-        <strong>硕士，信息与通信工程</strong>
-        <span>某某大学</span>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-year">2014 – 2018</div>
-      <div class="timeline-detail">
-        <strong>学士，电子信息工程</strong>
-        <span>某某大学</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========== 联系方式 ========== -->
-  <div class="card">
-    <h2>📬 联系方式</h2>
+    <h2>Contact</h2>
     <p style="color:var(--muted);">
-      📧 邮箱：<a href="mailto:yourname@example.com" style="color:var(--accent);">yourname@example.com</a><br>
-      🏢 地址：某某大学计算机学院，XX 楼 XXX 室
+      📧 gxy666@mails.tsinghua.edu.cn<br>
+      🏢 Tsinghua University, Beijing, China
     </p>
   </div>
 
   <footer>
-    © 2025 gxy666 · Powered by GitHub Pages
+    © 2025 Xiangyu Gao · Powered by GitHub Pages
   </footer>
 
 </div>
