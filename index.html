@@ -44,6 +44,13 @@
     padding: 40px;
     margin-bottom: 28px;
     box-shadow: var(--shadow);
+    display: flex; align-items: flex-start; gap: 32px;
+  }
+  .profile-text { flex: 1; min-width: 0; }
+  .profile-photo {
+    width: 120px; height: 120px; border-radius: 50%;
+    object-fit: cover; flex-shrink: 0;
+    border: 3px solid var(--border);
   }
   .profile h1 { font-size: 2rem; font-weight: 700; margin-bottom: 4px; }
   .profile .affil { color: var(--accent); font-size: 1.05rem; font-weight: 500; margin-bottom: 12px; }
@@ -95,7 +102,8 @@
   footer { text-align: center; color: var(--muted); font-size: .82rem; margin-top: 32px; }
 
   @media (max-width: 600px) {
-    .profile { padding: 24px; }
+    .profile { padding: 24px; flex-direction: column; align-items: center; text-align: center; }
+    .profile-photo { width: 96px; height: 96px; }
     .card { padding: 20px 22px; }
     .timeline-item { flex-direction: column; gap: 2px; }
   }
@@ -105,6 +113,8 @@
 <div class="container">
 
   <div class="profile">
+    <img class="profile-photo" src="photo.jpg" alt="Xiangyu Gao">
+    <div class="profile-text">
     <h1>Xiangyu Gao</h1>
     <div class="affil">M.S. Candidate · Institute for Network Sciences and Cyberspace, Tsinghua University</div>
     <p class="bio">
@@ -119,6 +129,7 @@
       <a href="https://scholar.google.com/citations?hl=zh-CN&user=JfitiXYAAAAJ">📚 Google Scholar</a>
       <a href="https://github.com/gxy666">💻 GitHub</a>
     </div>
+    </div><!-- .profile-text -->
   </div>
 
   <div class="card">
